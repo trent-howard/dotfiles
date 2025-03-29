@@ -38,3 +38,17 @@ Create a file `~/.config/git/gitconfig-personal` and populate it with your user 
 > [!IMPORTANT]
 > Remember to create and add a new SSH key!
 > [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+## MacOS
+
+To help bootstrap a new system run the following shell script to:
+
+- install [Hombrew](https://brew.sh/)
+- install a few apps and tools
+- configure some system preferences
+
+```sh
+./scripts/mac-setup.sh
+```
+
+I usually remap <kbd>caps lock</kbd> to <kbd>ctrl</kbd> but haven't looked into how this could be done programmatically yet.
