@@ -85,3 +85,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 
+# Set some vimish shortcuts for Rectangle
+# C-opt-H
+defaults write com.knollsoft.Rectangle.leftHalf '{ keyCode = 4; modifierFlags = 786432; };'
+# C-cmd-H
+defaults write com.knollsoft.Rectangle.previousDisplay '{ keyCode = 37; modifierFlags = 1310720; };'
+# C-opt-L
+defaults write com.knollsoft.Rectangle.rightHalf '{ keyCode = 37; modifierFlags = 786432; };'
+# C-cmd-L
+defaults write com.knollsoft.Rectangle.nextDisplay '{ keyCode = 4; modifierFlags = 1310720; };'
