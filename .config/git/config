@@ -1,0 +1,10 @@
+[include]
+	path = ./gitconfig-personal
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+[rerere]
+	enabled = true
