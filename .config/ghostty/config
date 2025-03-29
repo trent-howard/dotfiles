@@ -1,0 +1,14 @@
+font-size = 14
+font-feature = -calt
+
+theme = vesper
+window-padding-color = extend
+
+mouse-hide-while-typing = true
+
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+keybind = ctrl+shift+k=scroll_page_lines:-1
+keybind = ctrl+shift+j=scroll_page_lines:+1
+
