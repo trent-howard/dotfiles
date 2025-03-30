@@ -6,12 +6,8 @@ if type fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+source /usr/local/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -31,16 +27,8 @@ setopt HIST_IGNORE_SPACE      # Dont record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS      # Dont write duplicate entries in the history file.
 setopt SHARE_HISTORY          # Share history between all sessions.
 
-# enable auto cd
 setopt AUTO_CD
-# disable case sensitive globbing
 setopt NO_CASE_GLOB
-
-# set shell prompt
-source "${ZDOTDIR}/powerlevel10k/powerlevel10k.zsh-theme"
-
-# enable tab completion
-autoload -U compinit && compinit
 
 git-tidy() {
    git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
@@ -79,9 +67,6 @@ path+=(
   '/usr/local/opt/mysql-client/bin'
 )
 export PATH
-
-# enable syntax highlighting
-source "${ZDOTDIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Rustup
 . "$HOME/.cargo/env"
