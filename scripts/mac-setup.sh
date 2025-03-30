@@ -16,6 +16,7 @@ brew analytics off
 
 # install packages
 packages=(
+  antidote
   aws-cdk
   awscli
   deno
