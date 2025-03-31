@@ -26,6 +26,7 @@ packages=(
   go
   goose
   inetutils
+  jq
   lazygit
   neovim
   node
