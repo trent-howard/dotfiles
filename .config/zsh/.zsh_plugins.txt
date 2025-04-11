@@ -5,4 +5,4 @@ mattmc3/ez-compinit
 romkatv/powerlevel10k
 
 zdharma-continuum/fast-syntax-highlighting
-zsh-users/zsh-autosuggestions
+# zsh-users/zsh-autosuggestions
