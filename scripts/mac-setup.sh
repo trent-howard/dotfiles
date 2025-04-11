@@ -77,6 +77,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Dock
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock showHidden -bool true # dim hidden apps in dock
 defaults write com.apple.dock tilesize -int 48
 killall Dock
 
