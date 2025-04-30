@@ -19,6 +19,9 @@ return {
         nofile = { enabled = false },
       },
     },
+    completions = {
+      blink = { enabled = true },
+    },
   },
   ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
   config = function(_, opts)
