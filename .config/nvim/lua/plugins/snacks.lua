@@ -43,6 +43,7 @@ return {
       callback = function()
         -- Create some toggle mappings
         Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>tw")
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>ts")
       end,
     })
   end,

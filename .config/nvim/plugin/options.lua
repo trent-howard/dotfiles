@@ -75,3 +75,6 @@ opt.wrap = false
 
 -- reduce virtual text padding
 vim.diagnostic.config({ virtual_text = { spacing = 0 } })
+
+opt.spelllang = "en_gb"
+opt.spell = true
