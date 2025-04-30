@@ -30,9 +30,17 @@ return {
           transparency = true,
         },
 
+        -- palette = {
+        --   moon = {
+        --     base = "#191724",
+        --   },
+        -- },
+
         highlight_groups = {
           TelescopeBorder = { bg = "none" },
           CursorLine = { bg = "base" },
+          RenderMarkdownCode = { bg = "base" },
+          RenderMarkdownCodeInline = { bg = "base" },
         },
       })
       vim.cmd.colorscheme("rose-pine-moon")
