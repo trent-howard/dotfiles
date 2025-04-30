@@ -14,6 +14,11 @@ return {
     checkbox = {
       enabled = false,
     },
+    overrides = {
+      buftype = {
+        nofile = { enabled = false },
+      },
+    },
   },
   ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
   config = function(_, opts)
