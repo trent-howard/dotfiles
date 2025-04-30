@@ -70,13 +70,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Hide keypresses in bottom row
 opt.showcmd = false
 
--- Disable disable line wrap
--- add shortcut to toggle
+-- Disable line wrap by default
 opt.wrap = false
-vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "[T]oggle line [W]rap" })
 
 -- reduce virtual text padding
 vim.diagnostic.config({ virtual_text = { spacing = 0 } })
-
--- Add color line at column
--- opt.colorcolumn = "100"
