@@ -6,7 +6,7 @@ if type fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
-source /usr/local/opt/antidote/share/antidote/antidote.zsh
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
 # tabtab source for packages
@@ -35,36 +35,37 @@ git-tidy() {
 }
 
 # Aliases
-export GREP_OPTIONS='--color=auto'
-alias ls='gls -hFGH --color=always'
-alias ll='ls -al'
-alias la='ls -a'
-alias du='du -akh'
+export GREP_OPTIONS="--color=auto"
+alias ls="ls -hFGH --color=always"
+alias ll="ls -al"
+alias la="ls -a"
+alias du="du -akh"
 alias c="open $1 -a Visual\ Studio\ Code"
 
 if type nvim &> /dev/null; then
-  alias vim='nvim'
+  alias vi="nvim"
+  alias vim="nvim"
   alias vimdiff="nvim -d"
   export EDITOR="nvim"
   export GIT_EDITOR="nvim"
 fi
 
 if type bat &> /dev/null; then
-  alias cat='bat'
+  alias cat="bat"
   export BAT_THEME="base16-256"
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 if type aws_completer &> /dev/null; then
   autoload bashcompinit && bashcompinit
-  complete -C '/usr/local/bin/aws_completer' aws
+  complete -C "$(brew --prefix)/bin/aws_completer" aws
 fi
 
 path+=(
   "${HOME}/.sbin/"
-  '/usr/local/lib'
-  '/usr/local/opt'
-  '/usr/local/opt/mysql-client/bin'
+  "/usr/local/lib"
+  "/usr/local/opt"
+  "/usr/local/opt/mysql-client/bin"
 )
 export PATH
 
