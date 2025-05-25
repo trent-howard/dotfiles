@@ -6,6 +6,11 @@ if test ! $(which gcc); then
   /usr/bin/xcode-select --install
 fi
 
+# install rosetta if we're on an apple silicon mac
+if [[ $(uname -m) == "arm" ]]; then
+  softwareupdate --install-rosetta --agree-to-license
+fi
+
 # install homebrew
 if test ! $(which brew); then
   echo "Installing homebrew..."
@@ -48,6 +53,7 @@ apps=(
   font-jetbrains-mono-nerd-font
   ghostty
   google-chrome
+  karabiner-elements
   postman
   rectangle
   signal
@@ -88,12 +94,3 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 
-# Set some vimish shortcuts for Rectangle
-# C-opt-H
-defaults write com.knollsoft.Rectangle.leftHalf '{ keyCode = 4; modifierFlags = 786432; };'
-# C-cmd-H
-defaults write com.knollsoft.Rectangle.previousDisplay '{ keyCode = 37; modifierFlags = 1310720; };'
-# C-opt-L
-defaults write com.knollsoft.Rectangle.rightHalf '{ keyCode = 37; modifierFlags = 786432; };'
-# C-cmd-L
-defaults write com.knollsoft.Rectangle.nextDisplay '{ keyCode = 4; modifierFlags = 1310720; };'
