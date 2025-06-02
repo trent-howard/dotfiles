@@ -12,3 +12,5 @@ macos-option-as-alt = true
 keybind = ctrl+shift+k=scroll_page_lines:-1
 keybind = ctrl+shift+j=scroll_page_lines:+1
 
+auto-update = off
+auto-update-channel = tip
