@@ -5,6 +5,7 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    explorer = { enabled = true },
   },
   keys = {
     {
@@ -16,7 +17,7 @@ return {
       mode = { "n", "v" },
     },
     {
-      "<leader>gc",
+      "<leader>gy",
       function()
         Snacks.gitbrowse.open({
           open = function(url)
@@ -34,6 +35,13 @@ return {
         Snacks.lazygit()
       end,
       desc = "Lazygit",
+    },
+    {
+      "\\",
+      function()
+        Snacks.explorer({ hidden = true })
+      end,
+      desc = "File Explorer",
     },
   },
   init = function()

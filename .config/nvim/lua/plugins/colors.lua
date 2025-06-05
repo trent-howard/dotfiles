@@ -31,6 +31,7 @@ return {
           NormalFloat = { bg = "base" },
           BlinkCmpDoc = { bg = "base" },
           BlinkCmpDocSeparator = { bg = "base" },
+          SnacksPicker = { link = "none" },
         },
       })
     end,
