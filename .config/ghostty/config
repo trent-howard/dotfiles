@@ -1,7 +1,7 @@
 font-size = 14
 font-feature = -calt
 
-theme = vesper
+theme = carbonfox
 window-padding-color = extend
 
 mouse-hide-while-typing = true

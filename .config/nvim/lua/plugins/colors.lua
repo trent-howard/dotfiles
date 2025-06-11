@@ -35,8 +35,22 @@ return {
         },
       })
     end,
+    -- init = function()
+    --   vim.cmd.colorscheme("rose-pine-moon")
+    -- end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    priority = 1000,
+    config = function()
+      require("nightfox").setup({
+        groups = { all = {
+          SnacksPicker = { link = "none" },
+        } },
+      })
+    end,
     init = function()
-      vim.cmd.colorscheme("rose-pine-moon")
+      vim.cmd.colorscheme("carbonfox")
     end,
   },
 }
