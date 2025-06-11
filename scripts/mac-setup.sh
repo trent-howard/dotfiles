@@ -25,6 +25,7 @@ packages=(
   aws-cdk
   awscli
   deno
+  fd
   fnm
   fzf
   git
