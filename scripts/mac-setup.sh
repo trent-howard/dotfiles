@@ -64,7 +64,7 @@ if test ! $(which brew); then
 fi
 
 # create dirs we don't want entirely symlinked by stow
-mkdir -p ~/.config/git
+mkdir -p ~/.config/git ~/.config/zsh
 
 brew analytics off
 
