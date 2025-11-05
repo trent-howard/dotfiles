@@ -6,6 +6,10 @@ if type fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^X' edit-command-line
+
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
