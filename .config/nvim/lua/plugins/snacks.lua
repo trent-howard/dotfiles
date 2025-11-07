@@ -51,6 +51,15 @@ return {
         -- Create some toggle mappings
         Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>tw")
         Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>ts")
+        Snacks.toggle({
+          name = "Virtual diagnostic",
+          get = function()
+            return vim.diagnostic.config().virtual_text
+          end,
+          set = function(isEnabled)
+            vim.diagnostic.config({ virtual_text = isEnabled and { spacing = 0 } or false })
+          end,
+        }):map("<leader>tv")
       end,
     })
   end,
