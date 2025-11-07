@@ -49,6 +49,7 @@ return { -- Autoformat
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       yaml = { "prettier" },
+      zig = { "zig fmt" },
     },
   },
 }

@@ -209,11 +209,7 @@ return {
             },
           },
         },
-        zls = {
-          settings = {
-            zig_fmt_parse_errors = 0,
-          },
-        },
+        zls = {},
       }
 
       -- Ensure the servers and tools above are installed
