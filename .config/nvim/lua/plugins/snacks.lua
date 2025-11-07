@@ -60,6 +60,17 @@ return {
             vim.diagnostic.config({ virtual_text = isEnabled and { spacing = 0 } or false })
           end,
         }):map("<leader>tv")
+        Snacks.toggle({
+          id = "format_on_save",
+          name = "Format on save",
+          get = function()
+            local state = vim.g.format_on_save_enabled
+            return state == nil and true or state
+          end,
+          set = function(state)
+            vim.g.format_on_save_enabled = state
+          end,
+        }):map("<leader>tf")
       end,
     })
   end,
