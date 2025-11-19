@@ -71,10 +71,14 @@ path+=(
   "/usr/local/opt"
   "/usr/local/opt/mysql-client/bin"
 )
-export PATH
 
-# Rustup
-. "$HOME/.cargo/env"
+if type rustup &> /dev/null; then
+  path+=(
+    "$(brew --prefix rustup)/bin"
+  )
+fi
+
+export PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "${ZDOTDIR}/pure.p10k.zsh" ]] || source "${ZDOTDIR}/pure.p10k.zsh"
