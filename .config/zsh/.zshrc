@@ -65,6 +65,10 @@ if type aws_completer &> /dev/null; then
   complete -C "$(brew --prefix)/bin/aws_completer" aws
 fi
 
+if type kubectl &> /dev/null; then
+  source <(kubectl completion zsh)
+fi
+
 path+=(
   "${HOME}/.sbin/"
   "/usr/local/lib"
