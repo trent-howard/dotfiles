@@ -35,7 +35,11 @@ setopt AUTO_CD
 setopt NO_CASE_GLOB
 
 git-tidy() {
-   git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+  git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+}
+
+mkcd() {
+  mkdir -p $1 && cd $1
 }
 
 # Aliases
