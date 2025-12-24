@@ -15,7 +15,7 @@ return { -- Autoformat
   opts = {
     notify_on_error = false,
     format_on_save = function(bufnr)
-      if not Snacks.toggle.get('format_on_save'):get() then
+      if not Snacks.toggle.get("format_on_save"):get() then
         return
       end
 
@@ -41,6 +41,7 @@ return { -- Autoformat
       -- Use 'stop_after_first' to run the first available formatter from the list e.g.
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
       css = { "prettier" },
+      go = { "gofmt" },
       html = { "prettier" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
