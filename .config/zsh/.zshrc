@@ -8,7 +8,7 @@ fi
 
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^X' edit-command-line
+bindkey '^X^E' edit-command-line
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
