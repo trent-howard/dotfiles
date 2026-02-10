@@ -41,6 +41,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Telescope picker. This is really useful to discover what Telescope can
     -- do as well as how to actually do it!
 
+    local vimgrep_arguments = { unpack(require("telescope.config").values.vimgrep_arguments) }
+    table.insert(vimgrep_arguments, "--hidden")
+    table.insert(vimgrep_arguments, "--glob")
+    table.insert(vimgrep_arguments, "!**/.git/*")
+
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
     require("telescope").setup({
@@ -59,12 +64,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
             i = { ["<c-q>"] = require("telescope.actions").delete_buffer },
           },
         },
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        },
       },
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
         },
         fzf = {},
+      },
+      defaults = {
+        vimgrep_arguments = vimgrep_arguments,
       },
     })
 
