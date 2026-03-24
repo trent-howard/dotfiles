@@ -1,10 +1,3 @@
-if type fnm &> /dev/null; then
-  eval "$(fnm env --use-on-cd)"
-fi
-
-if type fzf &> /dev/null; then
-  source <(fzf --zsh)
-fi
 
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -86,6 +79,13 @@ if type rustup &> /dev/null; then
   )
 fi
 
+if type fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+fi
+
+if type fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
 export PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
