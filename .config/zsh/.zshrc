@@ -35,6 +35,13 @@ mkcd() {
   mkdir -p $1 && cd $1
 }
 
+# convert screen recording to mp4
+mp4() {
+  local filename="$(basename $1 .mov)"
+  local dir="$(dirname $1)"
+  ffmpeg -i $1 "${dir}/${filename}.mp4" && rm $1
+}
+
 # Aliases
 export GREP_OPTIONS="--color=auto"
 alias ls="ls -hFGH --color=always"
