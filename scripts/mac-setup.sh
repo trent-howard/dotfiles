@@ -90,6 +90,7 @@ packages=(
   python3
   ripgrep
   stow
+  tree-sitter-cli
   uv
 )
 
