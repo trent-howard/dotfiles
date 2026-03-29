@@ -79,3 +79,5 @@ vim.diagnostic.config({ virtual_text = { spacing = 0 } })
 opt.spelllang = "en_gb"
 opt.spell = true
 opt.spelloptions = "camel"
+
+opt.foldlevel = 99
