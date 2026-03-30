@@ -183,6 +183,7 @@ return {
         },
         gopls = {},
         graphql = {},
+        jsonls = {},
         lua_ls = {
           on_init = function(client)
             if client.workspace_folders then
@@ -218,6 +219,7 @@ return {
         rust_analyzer = {},
         stylua = {},
         ts_ls = {},
+        yamlls = {},
         zls = {},
       }
 
