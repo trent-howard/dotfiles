@@ -12,6 +12,7 @@ return {
         "c",
         "css",
         "diff",
+        "graphql",
         "html",
         "javascript",
         "jsdoc",
