@@ -24,6 +24,7 @@ return {
             vim.fn.setreg("+", url)
             vim.notify("Yanked git remote into clipboard")
           end,
+          notify = false,
         })
       end,
       desc = "Yank git remote into system clipboard",
