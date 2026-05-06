@@ -11,5 +11,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { desc = "Open diagno
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "yp", function()
-  vim.fn.setreg("+", vim.fn.expand("%:."))
-end, { desc = "[Y]ank file [p]ath relative to cwd" })
+  local current_path = vim.fn.expand("%:")
+  vim.fn.setreg("+", current_path)
+  vim.notify("Yanked " .. current_path .. " into clipboard")
+end, { desc = "[Y]ank file [p]ath" })
