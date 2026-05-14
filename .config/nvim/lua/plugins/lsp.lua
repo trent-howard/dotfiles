@@ -110,15 +110,6 @@ return {
           --  For example, in C this would take you to the header.
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-          -- Display signature information in floating window
-          -- this should be default, not sure what might be overriding it
-          vim.keymap.set(
-            "i",
-            "<C-S>",
-            vim.lsp.buf.signature_help,
-            { buffer = event.buf, desc = "LSP: [S]ignature help" }
-          )
-
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
