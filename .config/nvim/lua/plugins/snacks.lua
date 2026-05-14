@@ -31,6 +31,21 @@ return {
       mode = { "n", "v" },
     },
     {
+      "<leader>gyp",
+      function()
+        Snacks.gitbrowse.open({
+          open = function(url)
+            vim.fn.setreg("+", url)
+            vim.notify("Yanked git permalink into clipboard")
+          end,
+          notify = false,
+          what = "permalink",
+        })
+      end,
+      desc = "Yank git permalink into system clipboard",
+      mode = { "n", "v" },
+    },
+    {
       "<leader>gg",
       function()
         Snacks.lazygit()
