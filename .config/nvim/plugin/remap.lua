@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { desc = "Open diagno
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.keymap.set("n", "yp", function()
+vim.keymap.set("n", "<C-y>", function()
   local current_path = vim.fn.expand("%:")
   vim.fn.setreg("+", current_path)
   vim.notify("Yanked " .. current_path .. " into clipboard")

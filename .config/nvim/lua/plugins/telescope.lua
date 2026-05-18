@@ -46,22 +46,36 @@ return { -- Fuzzy Finder (files, lsp, etc)
     table.insert(vimgrep_arguments, "--glob")
     table.insert(vimgrep_arguments, "!**/.git/*")
 
+    local yank_paths = function(prompt_bufnr)
+      local action_state = require("telescope.actions.state")
+      local picker = action_state.get_current_picker(prompt_bufnr)
+      local selections = picker:get_multi_selection()
+
+      if vim.tbl_isempty(selections) then
+        selections = { action_state.get_selected_entry() }
+      end
+
+      local paths = {}
+      for _, entry in ipairs(selections) do
+        local path = entry.path or entry.filename or entry.value
+        if path then
+          table.insert(paths, vim.fn.fnamemodify(path, ":."))
+        end
+      end
+
+      local result = table.concat(paths, "\n")
+      vim.fn.setreg("+", result)
+      vim.notify("Copied: " .. result:gsub("\n", ", "), vim.log.levels.INFO)
+    end
+
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
     require("telescope").setup({
-      -- You can put your default mappings / updates / etc. in here
-      --  All the info you're looking for is in `:help telescope.setup()`
-      --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
       pickers = {
         buffers = {
           sort_mru = true,
           mappings = {
-            i = { ["<c-q>"] = require("telescope.actions").delete_buffer },
+            i = { ["<C-q>"] = require("telescope.actions").delete_buffer },
           },
         },
         find_files = {
@@ -76,6 +90,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
       },
       defaults = {
         vimgrep_arguments = vimgrep_arguments,
+        mappings = {
+          i = { ["<C-y>"] = yank_paths },
+          n = { ["<C-y>"] = yank_paths },
+        },
       },
     })
 
