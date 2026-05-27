@@ -30,6 +30,7 @@ return {
         "vim",
         "vimdoc",
         "zig",
+        "zsh",
       }
       require("nvim-treesitter").install(parsers)
       vim.api.nvim_create_autocmd("FileType", {
