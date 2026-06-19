@@ -12,6 +12,7 @@ return {
         "c",
         "css",
         "diff",
+        "go",
         "graphql",
         "html",
         "javascript",

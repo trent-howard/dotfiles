@@ -208,10 +208,12 @@ return {
             Lua = {},
           },
         },
+        ruff = {},
         rust_analyzer = {},
         stylua = {},
         terraformls = {},
         ts_ls = {},
+        ty = {},
         yamlls = {},
         zls = {},
       }
