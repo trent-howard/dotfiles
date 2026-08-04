@@ -9,8 +9,24 @@ mouse-hide-while-typing = true
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 
-keybind = ctrl+shift+k=scroll_page_lines:-1
-keybind = ctrl+shift+j=scroll_page_lines:+1
-
 auto-update = off
 auto-update-channel = tip
+
+keybind = leader/
+keybind = leader/escape=deactivate_key_table
+keybind = leader/catch_all=deactivate_key_table
+keybind = ctrl+space=activate_key_table_once:leader
+
+keybind = scroll/
+keybind = leader/ctrl+s=activate_key_table:scroll
+keybind = leader/s=activate_key_table:scroll
+keybind = performable:scroll/catch_all=ignore
+keybind = scroll/escape=deactivate_key_table
+keybind = scroll/k=scroll_page_lines:-1
+keybind = scroll/j=scroll_page_lines:+1
+keybind = scroll/ctrl+u=scroll_page_fractional:-0.5
+keybind = scroll/ctrl+d=scroll_page_fractional:0.5
+keybind = scroll/g>g=scroll_to_top
+keybind = scroll/shift+g=scroll_to_bottom
+keybind = scroll/ctrl+p=jump_to_prompt:-1
+keybind = scroll/ctrl+n=jump_to_prompt:+1
