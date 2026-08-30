@@ -14,13 +14,13 @@ auto-update-channel = tip
 
 keybind = leader/
 keybind = leader/escape=deactivate_key_table
-keybind = leader/catch_all=deactivate_key_table
+keybind = leader/unconsumed:catch_all=deactivate_key_table
 keybind = unconsumed:ctrl+space=activate_key_table_once:leader
 
 keybind = scroll/
 keybind = leader/ctrl+s=activate_key_table:scroll
 keybind = leader/s=activate_key_table:scroll
-keybind = performable:scroll/catch_all=ignore
+keybind = scroll/performable:catch_all=ignore
 keybind = scroll/escape=deactivate_key_table
 keybind = scroll/k=scroll_page_lines:-1
 keybind = scroll/j=scroll_page_lines:+1
