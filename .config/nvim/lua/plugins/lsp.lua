@@ -172,6 +172,9 @@ return {
             experimental = { useFlatConfig = false },
           },
         },
+        expert = {
+          settings = {},
+        },
         gh_actions_ls = {},
         gopls = {},
         graphql = {},
