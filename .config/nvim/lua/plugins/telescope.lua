@@ -94,6 +94,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
           i = { ["<C-y>"] = yank_paths },
           n = { ["<C-y>"] = yank_paths },
         },
+        path_display = {
+          filename_first = true,
+        },
       },
     })
 
