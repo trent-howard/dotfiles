@@ -22,6 +22,10 @@ keybind = leader/ctrl+s=activate_key_table:scroll
 keybind = leader/s=activate_key_table:scroll
 keybind = scroll/performable:catch_all=ignore
 keybind = scroll/unconsumed:super+c=copy_to_clipboard
+keybind = scroll/super+[=goto_split:previous
+keybind = scroll/super+]=goto_split:next
+keybind = scroll/super+shift+[=previous_tab
+keybind = scroll/super+shift+]=next_tab
 keybind = scroll/escape=deactivate_key_table
 keybind = scroll/k=scroll_page_lines:-1
 keybind = scroll/j=scroll_page_lines:+1
